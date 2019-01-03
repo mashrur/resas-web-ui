@@ -1,38 +1,28 @@
 import React, { Component } from 'react';
 import McqOption from './McqOption';
 
-class OptionList extends React.Component {
-    constructor(props) {
-      super(props);    
-      this.state = {
-        options: props.options,
-      };
-      var changedOptions = props.options;
-    }
-    
-    createOption = (opt) => {
-      return <McqOption key={opt.key} id={opt.key} isOptCorrect={opt.isOptCorrect} initOptValue={opt.initOptValue}  onOptionChange={this.onOptionChange} optionCorrectChanged={this.optionCorrectChanged}/>;
+const OptionList = (props) => {
+    var createOption = (opt) => {
+      return <McqOption key={opt.key} id={opt.key} isOptCorrect={opt.isOptCorrect} initOptValue={opt.initOptValue}  onOptionChange={onOptionChange} optionCorrectChanged={optionCorrectChanged}/>;
     }
   
-    createOptions = () => {
-        return this.props.options.map(this.createOption);
+    var createOptions = () => {
+        return props.options.map(createOption);
      }
         
-    onOptionChange = (key, value) => {
-      this.props.optionChanged(key, value);
+    var onOptionChange = (key, value) => {
+      props.optionChanged(key, value);
     }
     
-    optionCorrectChanged = (key, value) => {
-      this.props.optionCorrectChanged(key, value);
+    var optionCorrectChanged = (key, value) => {
+      props.optionCorrectChanged(key, value);
     }
     
-    render () {
-      return (
+    return (
         <div className="container">
-          {this.createOptions()}
+          {createOptions()}
         </div>
       );
-    }
   }
 
   export default OptionList;

@@ -48,9 +48,11 @@ class McqEdit extends React.Component {
         return (
           <div>
           <McqQuestion initQuestion={this.state.question} onQuestionChange={this.onQuestionChange}/>
-           <button onClick={this.addChild}>Add Option</button>
-                    {                                                      <OptionList options={this.state.options} optionChanged={this.onOptionChange} optionCorrectChanged={this.optionCorrectChanged}/>
+                    {                                                     
+                       <OptionList options={this.state.options} optionChanged={this.onOptionChange} optionCorrectChanged={this.optionCorrectChanged}/>
                     }
+            <button onClick={this.addChild}>Add Option</button>
+            <button>Save</button>
             </div>
         );
       }

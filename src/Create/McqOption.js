@@ -1,42 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class McqOption extends React.Component {
-    constructor(props) {
-      super(props);    
-      this.state = {
-        id: props.id,
-        isChecked: props.isOptCorrect,
-      };    
+const McqOption = (props) => {
+    
+    var toggleChange = (evt) => {
+      props.optionCorrectChanged(props.id, !props.isOptCorrect);
     }
     
-    toggleChange = () => {
-      this.setState({
-        isChecked: !this.state.isChecked,
-      });
-      this.props.optionCorrectChanged(this.state.id, this.state.isChecked);
-      
-    }
-    
-    updateInputValue = (evt) => {
-      this.props.onOptionChange(this.state.id, evt.target.value);   
+    var updateInputValue = (evt) => {
+      props.onOptionChange(props.id, evt.target.value);   
     }
       
-    render() {
-      return (
-        <div id={this.state.id}>
-        <div id={'q'+this.state.id}>
-        <label id={'l'+this.state.id}>{this.state.id}</label>
-        <input id={'i'+this.state.id} type="text" placeholder={this.props.initOptValue} onChange={this.updateInputValue}/>       
-          </div>
-        <br/>
-        <label id={'c'+this.state.id}>Correct answer</label>
-        <input id={'ch'+this.state.id} type="checkbox"
-            checked={this.state.isChecked}
-            onChange={this.toggleChange}
+   return (
+        <div id={props.id}>
+        
+        <label id={'l'+props.id}>{props.id}</label>
+        <textarea id={'i'+props.id} placeholder={props.initOptValue} onChange={updateInputValue} rows="4" cols="50"/>       
+       
+        <label id={'c'+props.id}>Correct</label>
+        <input id={'ch'+props.id} type="checkbox"
+            checked={props.isOptCorrect}
+            onChange={toggleChange}
           />
         </div>
-      );
-    }
+      )
   }
 
   export default McqOption;

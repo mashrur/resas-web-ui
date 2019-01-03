@@ -1,0 +1,25 @@
+{
+    "options": [
+      {
+        "key": 1,
+        "isOptCorrect": "false",
+        "initOptValue": "Round"
+      },
+      {
+        "key": 2,
+        "isOptCorrect": "false",
+        "initOptValue": "Triangular"
+      },
+      {
+        "key": 1,
+        "isOptCorrect": "true",
+        "initOptValue": "Like a box"
+      },
+      {
+        "key": 1,
+        "isOptCorrect": "false",
+        "initOptValue": "Like an Orange"
+      }
+    ],
+    "question": "What is the shape of the world?"
+  }

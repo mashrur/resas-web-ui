@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class McqQuestion extends React.Component {
-    constructor(props) {
-      super(props);    
+const McqQuestion = (props) => {
+            
+    var updateInputValue = (evt) => {
+      props.onQuestionChange(evt.target.value);   
     }
       
-    updateInputValue = (evt) => {
-      this.props.onQuestionChange(evt.target.value);   
-    }
-      
-    render() {
-      return (
+    return (
         <div>
         <label>Question</label>
-        <input type="text" placeholder={this.props.initQuestion} onChange={this.updateInputValue}/>       
+        <input type="text" placeholder={props.initQuestion} onChange={updateInputValue}/>       
           </div>
       );
-    }
   }
 
   export default McqQuestion;
