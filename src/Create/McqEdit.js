@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
 import McqQuestion from './McqQuestion';
-import OptionList from './OptionList'
+import OptionList from './OptionList';
+import axios from 'axios';
+
 
 class McqEdit extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        question:'test q',
-        options: [],
-      };
+  state = {
+    question:'',
+    options: [],
+  };
+    
+  constructor(props) {
+      super(props);      
     }
     
+    componentDidMount() {
+      axios.get(`https://raw.githubusercontent.com/mashrur/resas-web-ui/master/blob/master/db.json`)
+        .then(res => {
+          const questions = res.data;
+          this.setState({ question: questions.question,
+            options: questions.options
+           });
+        })
+    }
+
    saveValue = () => {
       console.log('value to be saved: ' + this.state.options);
     }
