@@ -11,12 +11,12 @@
         "initOptValue": "Triangular"
       },
       {
-        "key": 1,
+        "key": 3,
         "isOptCorrect": "true",
         "initOptValue": "Like a box"
       },
       {
-        "key": 1,
+        "key": 4,
         "isOptCorrect": "false",
         "initOptValue": "Like an Orange"
       }
