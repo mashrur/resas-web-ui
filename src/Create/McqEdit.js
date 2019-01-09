@@ -15,7 +15,7 @@ class McqEdit extends React.Component {
     }
     
     componentDidMount() {
-      axios.get(`https://raw.githubusercontent.com/mashrur/resas-web-ui/master/blob/master/db.json`)
+      axios.get(`https://raw.githubusercontent.com/mashrur/resas-web-ui/master/db.json`)
         .then(res => {
           const questions = res.data;
           this.setState({ question: questions.question,
@@ -43,7 +43,7 @@ class McqEdit extends React.Component {
    
    onOptionChange = (key, value) => {
      var options = this.state.options;
-     options[key].initOptValue = value;   
+     options[key-1].initOptValue = value;   
      this.setState({
        options: options,
      });
@@ -51,7 +51,7 @@ class McqEdit extends React.Component {
    
    optionCorrectChanged = (key, value) => {
      var options = this.state.options;
-     options[key].isOptCorrect = value;   
+     options[key-1].isOptCorrect = value;   
      this.setState({
        options: options,
      });

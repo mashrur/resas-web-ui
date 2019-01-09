@@ -2,22 +2,22 @@
     "options": [
       {
         "key": 1,
-        "isOptCorrect": "false",
+        "isOptCorrect": false,
         "initOptValue": "Round"
       },
       {
         "key": 2,
-        "isOptCorrect": "false",
+        "isOptCorrect": false,
         "initOptValue": "Triangular"
       },
       {
         "key": 3,
-        "isOptCorrect": "true",
+        "isOptCorrect": true,
         "initOptValue": "Like a box"
       },
       {
         "key": 4,
-        "isOptCorrect": "false",
+        "isOptCorrect": false,
         "initOptValue": "Like an Orange"
       }
     ],
